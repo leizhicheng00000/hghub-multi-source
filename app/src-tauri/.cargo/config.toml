@@ -1,0 +1,9 @@
+# 本机曾因 C:/Users/雷志程/ 中文路径被 GNU binutils 按 GBK 误解码，
+# 导致 ld/ar/dlltool 报"文件不存在"。现已在 env.sh 中把 RUSTUP_HOME / CARGO_HOME / TMP
+# 全部重定向到纯 ASCII 路径（E:/rustup、E:/cargo、E:/tmp），根因已消除，
+# 默认链接器（mingw ld）即可正常工作，**不再需要任何 rustflags**。
+#
+# 重要：不要在此处加 [build].rustflags —— 它会同时作用于 Android 目标的编译单元，
+# 把交叉编译的 linker 覆盖成 rust-lld，导致 APK 构建失败。
+#
+# 构建请先 source /e/HGhub-v005/env.sh

@@ -1,0 +1,578 @@
+[
+  {
+    "id": "4kav",
+    "file": "4kav.js",
+    "name": "4k-av",
+    "version": "1.0.3",
+    "enabled": true,
+    "mature": false,
+    "bytes": 9853
+  },
+  {
+    "id": "91porn",
+    "file": "91porn.js",
+    "name": "91porn",
+    "version": "1.0.1",
+    "enabled": false,
+    "mature": true,
+    "bytes": 16632
+  },
+  {
+    "id": "anfuns",
+    "file": "anfuns.js",
+    "name": "anfuns",
+    "version": "1.0.1",
+    "enabled": false,
+    "mature": false,
+    "bytes": 7465
+  },
+  {
+    "id": "anime1.source",
+    "file": "anime1.source.js",
+    "name": "Anime1",
+    "version": "1.1.0",
+    "enabled": false,
+    "mature": false,
+    "bytes": 9898
+  },
+  {
+    "id": "aowu",
+    "file": "aowu.js",
+    "name": "嗷呜动漫",
+    "version": "1.0.1",
+    "enabled": false,
+    "mature": false,
+    "bytes": 10107
+  },
+  {
+    "id": "apple",
+    "file": "apple.js",
+    "name": "小苹果",
+    "version": "1.0.1",
+    "enabled": false,
+    "mature": false,
+    "bytes": 6350
+  },
+  {
+    "id": "auete.source",
+    "file": "auete.source.js",
+    "name": "Auete影视",
+    "version": "1.0.0",
+    "enabled": true,
+    "mature": false,
+    "bytes": 12805
+  },
+  {
+    "id": "av321.source",
+    "file": "av321.source.js",
+    "name": "321AV",
+    "version": "1.0.0",
+    "enabled": false,
+    "mature": true,
+    "bytes": 10070
+  },
+  {
+    "id": "av591.source",
+    "file": "av591.source.js",
+    "name": "591AV",
+    "version": "1.0.0",
+    "enabled": false,
+    "mature": true,
+    "bytes": 12208
+  },
+  {
+    "id": "avjb",
+    "file": "avjb.js",
+    "name": "AVJB",
+    "version": "1.0.0",
+    "enabled": false,
+    "mature": true,
+    "bytes": 16570
+  },
+  {
+    "id": "avtoday",
+    "file": "avtoday.js",
+    "name": "avtoday",
+    "version": "1.0.4",
+    "enabled": false,
+    "mature": true,
+    "bytes": 9109
+  },
+  {
+    "id": "bfzy.source",
+    "file": "bfzy.source.js",
+    "name": "暴风资源",
+    "version": "1.0.4",
+    "enabled": false,
+    "mature": false,
+    "bytes": 14409
+  },
+  {
+    "id": "bl911",
+    "file": "bl911.js",
+    "name": "911爆料网",
+    "version": "1.0.1",
+    "enabled": false,
+    "mature": true,
+    "bytes": 21804
+  },
+  {
+    "id": "cg91.source",
+    "file": "cg91.source.js",
+    "name": "91吃瓜",
+    "version": "1.0.3",
+    "enabled": false,
+    "mature": true,
+    "bytes": 13793
+  },
+  {
+    "id": "chengguo.source",
+    "file": "chengguo.source.js",
+    "name": "橙果短剧",
+    "version": "1.0.2",
+    "enabled": true,
+    "mature": true,
+    "bytes": 14466
+  },
+  {
+    "id": "dbku.source",
+    "file": "dbku.source.js",
+    "name": "独播库",
+    "version": "1.0.1",
+    "enabled": true,
+    "mature": false,
+    "bytes": 22197
+  },
+  {
+    "id": "dhvideo.source",
+    "file": "dhvideo.source.js",
+    "name": "豆花电影网",
+    "version": "1.0.0",
+    "enabled": true,
+    "mature": false,
+    "bytes": 14835
+  },
+  {
+    "id": "dpw.source",
+    "file": "dpw.source.js",
+    "name": "66大片网",
+    "version": "1.1.0",
+    "enabled": true,
+    "mature": false,
+    "bytes": 16282
+  },
+  {
+    "id": "duanju55.source",
+    "file": "duanju55.source.js",
+    "name": "五五短剧",
+    "version": "1.0.0",
+    "enabled": true,
+    "mature": false,
+    "bytes": 16526
+  },
+  {
+    "id": "duanjutt",
+    "file": "duanjutt.js",
+    "name": "短剧天堂",
+    "version": "1.0.1",
+    "enabled": false,
+    "mature": false,
+    "bytes": 6619
+  },
+  {
+    "id": "duobo",
+    "file": "duobo.js",
+    "name": "多播 duobo",
+    "version": "1.0.3",
+    "enabled": true,
+    "mature": true,
+    "bytes": 389882
+  },
+  {
+    "id": "gimy.source",
+    "file": "gimy.source.js",
+    "name": "Gimy TV",
+    "version": "1.0.0",
+    "enabled": true,
+    "mature": false,
+    "bytes": 8188
+  },
+  {
+    "id": "girigiri.source",
+    "file": "girigiri.source.js",
+    "name": "GiriGiri",
+    "version": "1.0.0",
+    "enabled": false,
+    "mature": false,
+    "bytes": 8946
+  },
+  {
+    "id": "haijiao",
+    "file": "haijiao.js",
+    "name": "海角",
+    "version": "1.0.1",
+    "enabled": false,
+    "mature": true,
+    "bytes": 17807
+  },
+  {
+    "id": "hanime",
+    "file": "hanime.js",
+    "name": "Hanime1",
+    "version": "1.0.4",
+    "enabled": false,
+    "mature": true,
+    "bytes": 9018
+  },
+  {
+    "id": "hanime16.source",
+    "file": "hanime16.source.js",
+    "name": "H動漫 hanime16",
+    "version": "1.0.1",
+    "enabled": false,
+    "mature": true,
+    "bytes": 9981
+  },
+  {
+    "id": "haose",
+    "file": "haose.js",
+    "name": "好色TV",
+    "version": "1.0.2",
+    "enabled": false,
+    "mature": true,
+    "bytes": 23494
+  },
+  {
+    "id": "hdmoli",
+    "file": "hdmoli.js",
+    "name": "hdmoli",
+    "version": "2.0.0",
+    "enabled": true,
+    "mature": false,
+    "bytes": 9557
+  },
+  {
+    "id": "heiliao.source",
+    "file": "heiliao.source.js",
+    "name": "黑料网",
+    "version": "1.0.3",
+    "enabled": false,
+    "mature": true,
+    "bytes": 16217
+  },
+  {
+    "id": "hhkan.source",
+    "file": "hhkan.source.js",
+    "name": "好好看",
+    "version": "1.0.3",
+    "enabled": false,
+    "mature": false,
+    "bytes": 20402
+  },
+  {
+    "id": "hjkk",
+    "file": "hjkk.js",
+    "name": "韩剧看看",
+    "version": "1.0.1",
+    "enabled": false,
+    "mature": false,
+    "bytes": 8688
+  },
+  {
+    "id": "hkdoll",
+    "file": "hkdoll.js",
+    "name": "玩偶姐姐",
+    "version": "1.0.5",
+    "enabled": false,
+    "mature": true,
+    "bytes": 9895
+  },
+  {
+    "id": "hl365.source",
+    "file": "hl365.source.js",
+    "name": "黑料不打烊",
+    "version": "1.1.0",
+    "enabled": false,
+    "mature": true,
+    "bytes": 16665
+  },
+  {
+    "id": "hlws.source",
+    "file": "hlws.source.js",
+    "name": "51黑料",
+    "version": "1.0.1",
+    "enabled": true,
+    "mature": true,
+    "bytes": 11389
+  },
+  {
+    "id": "huangguo",
+    "file": "huangguo.js",
+    "name": "黄果短剧",
+    "version": "4.1.0",
+    "enabled": true,
+    "mature": false,
+    "bytes": 32247
+  },
+  {
+    "id": "j18",
+    "file": "j18.js",
+    "name": "18J.TV",
+    "version": "1.0.0",
+    "enabled": false,
+    "mature": true,
+    "bytes": 13052
+  },
+  {
+    "id": "javtiful.source",
+    "file": "javtiful.source.js",
+    "name": "Javtiful",
+    "version": "1.1.0",
+    "enabled": false,
+    "mature": true,
+    "bytes": 12881
+  },
+  {
+    "id": "jdys",
+    "file": "jdys.js",
+    "name": "绝对影视",
+    "version": "1.0.1",
+    "enabled": true,
+    "mature": false,
+    "bytes": 7876
+  },
+  {
+    "id": "jisu.source",
+    "file": "jisu.source.js",
+    "name": "极速追剧",
+    "version": "1.0.1",
+    "enabled": true,
+    "mature": false,
+    "bytes": 11674
+  },
+  {
+    "id": "jpyy",
+    "file": "jpyy.js",
+    "name": "金牌影视",
+    "version": "1.0.1",
+    "enabled": false,
+    "mature": false,
+    "bytes": 8377
+  },
+  {
+    "id": "juzong.source",
+    "file": "juzong.source.js",
+    "name": "剧踪影院",
+    "version": "1.0.1",
+    "enabled": true,
+    "mature": false,
+    "bytes": 16521
+  },
+  {
+    "id": "kxyy.source",
+    "file": "kxyy.source.js",
+    "name": "开心影院",
+    "version": "1.0.0",
+    "enabled": true,
+    "mature": false,
+    "bytes": 15865
+  },
+  {
+    "id": "lovebox.source",
+    "file": "lovebox.source.js",
+    "name": "18PORNY",
+    "version": "1.0.0",
+    "enabled": true,
+    "mature": true,
+    "bytes": 22099
+  },
+  {
+    "id": "madou",
+    "file": "madou.js",
+    "name": "麻豆社",
+    "version": "1.0.3",
+    "enabled": false,
+    "mature": true,
+    "bytes": 6971
+  },
+  {
+    "id": "manko.source",
+    "file": "manko.source.js",
+    "name": "Manko",
+    "version": "1.1.0",
+    "enabled": false,
+    "mature": true,
+    "bytes": 12331
+  },
+  {
+    "id": "mfdmgw.source",
+    "file": "mfdmgw.source.js",
+    "name": "免费动漫",
+    "version": "1.0.1",
+    "enabled": true,
+    "mature": false,
+    "bytes": 20497
+  },
+  {
+    "id": "mrds",
+    "file": "mrds.js",
+    "name": "每日大赛",
+    "version": "1.0.2",
+    "enabled": false,
+    "mature": true,
+    "bytes": 8886
+  },
+  {
+    "id": "mwxk62",
+    "file": "mwxk62.js",
+    "name": "KKAV",
+    "version": "1.1.2",
+    "enabled": true,
+    "mature": true,
+    "bytes": 21026
+  },
+  {
+    "id": "netflixgc.source",
+    "file": "netflixgc.source.js",
+    "name": "奈飞工厂",
+    "version": "1.0.1",
+    "enabled": false,
+    "mature": false,
+    "bytes": 15678
+  },
+  {
+    "id": "pianku.source",
+    "file": "pianku.source.js",
+    "name": "片库",
+    "version": "1.1.0",
+    "enabled": true,
+    "mature": false,
+    "bytes": 16955
+  },
+  {
+    "id": "porna91",
+    "file": "porna91.js",
+    "name": "91Porna",
+    "version": "1.0.2",
+    "enabled": false,
+    "mature": true,
+    "bytes": 9725
+  },
+  {
+    "id": "pornhub",
+    "file": "pornhub.js",
+    "name": "Pornhub",
+    "version": "1.0.2",
+    "enabled": false,
+    "mature": true,
+    "bytes": 8340
+  },
+  {
+    "id": "pornlulu",
+    "file": "pornlulu.js",
+    "name": "撸撸视频 Pornlulu",
+    "version": "1.0.2",
+    "enabled": false,
+    "mature": true,
+    "bytes": 18056
+  },
+  {
+    "id": "porny",
+    "file": "porny.js",
+    "name": "91Porny（九色）",
+    "version": "1.0.1",
+    "enabled": false,
+    "mature": true,
+    "bytes": 8246
+  },
+  {
+    "id": "rou",
+    "file": "rou.js",
+    "name": "Rou Video",
+    "version": "1.0.0",
+    "enabled": false,
+    "mature": true,
+    "bytes": 16931
+  },
+  {
+    "id": "saohuo",
+    "file": "saohuo.js",
+    "name": "烧火电影",
+    "version": "1.0.1",
+    "enabled": false,
+    "mature": false,
+    "bytes": 8378
+  },
+  {
+    "id": "tangxin",
+    "file": "tangxin.js",
+    "name": "糖心Vlog",
+    "version": "1.0.1",
+    "enabled": false,
+    "mature": true,
+    "bytes": 10450
+  },
+  {
+    "id": "tiantian",
+    "file": "tiantian.js",
+    "name": "天天影视",
+    "version": "1.0.1",
+    "enabled": false,
+    "mature": false,
+    "bytes": 7599
+  },
+  {
+    "id": "wwgz",
+    "file": "wwgz.js",
+    "name": "农民影视",
+    "version": "1.0.3",
+    "enabled": false,
+    "mature": false,
+    "bytes": 8605
+  },
+  {
+    "id": "xhamster",
+    "file": "xhamster.js",
+    "name": "xHamster",
+    "version": "1.0.2",
+    "enabled": false,
+    "mature": true,
+    "bytes": 10760
+  },
+  {
+    "id": "xiaohys",
+    "file": "xiaohys.js",
+    "name": "小红影视",
+    "version": "1.0.1",
+    "enabled": true,
+    "mature": false,
+    "bytes": 9725
+  },
+  {
+    "id": "xingya",
+    "file": "xingya.js",
+    "name": "星芽短剧",
+    "version": "1.0.4",
+    "enabled": false,
+    "mature": false,
+    "bytes": 9976
+  },
+  {
+    "id": "xx9",
+    "file": "xx9.js",
+    "name": "主播视频",
+    "version": "1.0.3",
+    "enabled": false,
+    "mature": true,
+    "bytes": 21640
+  },
+  {
+    "id": "yingxi.source",
+    "file": "yingxi.source.js",
+    "name": "影夕视频",
+    "version": "1.0.1",
+    "enabled": true,
+    "mature": false,
+    "bytes": 22781
+  }
+]

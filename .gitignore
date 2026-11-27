@@ -1,0 +1,20 @@
+# 构建产物
+app/src-tauri/target/
+app/node_modules/
+app/dist/
+app/src-tauri/gen/android/app/build/
+app/src-tauri/gen/android/app/src/main/jniLibs/
+app/src-tauri/gen/android/.gradle/
+app/src-tauri/gen/android/.cxx/
+**/build/
+*.apk
+*.a
+*.so
+*.dll
+*.o
+*.rlib
+*.log
+
+# 系统
+.DS_Store
+Thumbs.db

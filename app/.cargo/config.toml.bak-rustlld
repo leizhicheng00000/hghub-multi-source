@@ -1,0 +1,15 @@
+# 宿主编译必须绕开本机两点缺陷：
+#   1) 无完整 mingw-w64（缺 cc1、crt2.o、libkernel32.a），GNU 链接必失败；
+#   2) 用户名含中文，GNU ld 按 ANSI 解析，把 C:/Users/雷志程/ 读成 C:/Users/À×Ö¾³Ì/，
+#      导致 sysroot 里真实存在的 .rlib 被报成不存在（实测同一文件放 ASCII 路径 exit=0）。
+# 故宿主编译改走 rustc 自带 rust-lld + rust-mingw 的 self-contained 运行时。
+#
+# !!! 只写 [build]，绝对不要加 [target."x86_64-pc-windows-gnu"] !!!
+# cargo 的规则是：只要指定了任意 target.*.rustflags，build.rustflags 就被整体忽略；
+# 而 proc-macro / build script 编译不带 --target，匹配不到任何 target 段，
+# 结果就是两边都拿不到 flag，退回默认 gcc 并失败（这个坑踩了四轮）。
+#
+# [build].rustflags 只作用于「不带 --target」的编译，Android 目标带 --target，
+# 天然不会被污染，不需要再用空数组去覆盖。
+[build]
+rustflags = ["-C", "link-self-contained=yes", "-C", "linker=rust-lld", "-C", "linker-flavor=ld.lld"]

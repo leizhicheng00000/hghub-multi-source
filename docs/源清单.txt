@@ -1,0 +1,69 @@
+启用 22 / 停用 42 / 成人 32
+
+--- 启用 ---
+huangguo			
+4kav	4k-av	1.0.3	
+auete.source	Auete影视	1.0.0	
+chengguo.source	橙果短剧	1.0.2	成人
+dbku.source	独播库	1.0.1	
+dhvideo.source	豆花电影网	1.0.0	
+dpw.source	66大片网	1.1.0	
+duanju55.source	五五短剧	1.0.0	
+duobo	多播 duobo	1.0.3	成人
+gimy.source	Gimy TV	1.0.0	
+hdmoli	hdmoli	2.0.0	
+hlws.source	51黑料	1.0.1	成人
+jdys	绝对影视	1.0.1	
+jisu.source	极速追剧	1.0.1	
+juzong.source	剧踪影院	1.0.1	
+kxyy.source	开心影院	1.0.0	
+lovebox.source	18PORNY	1.0.0	成人
+mfdmgw.source	免费动漫	1.0.1	
+mwxk62	KKAV	1.1.2	成人
+pianku.source	片库	1.1.0	
+xiaohys	小红影视	1.0.1	
+yingxi.source	影夕视频	1.0.1	
+
+--- 停用 ---
+91porn	91porn	1.0.1	成人
+anfuns	anfuns	1.0.1	
+anime1.source	Anime1	1.1.0	
+aowu	嗷呜动漫	1.0.1	
+apple	小苹果	1.0.1	
+av321.source	321AV	1.0.0	成人
+av591.source	591AV	1.0.0	成人
+avjb	AVJB	1.0.0	成人
+avtoday	avtoday	1.0.4	成人
+bfzy.source	暴风资源	1.0.4	
+bl911	911爆料网	1.0.1	成人
+cg91.source	91吃瓜	1.0.3	成人
+duanjutt	短剧天堂	1.0.1	
+girigiri.source	GiriGiri	1.0.0	
+haijiao	海角	1.0.1	成人
+hanime	Hanime1	1.0.4	成人
+hanime16.source	H動漫 hanime16	1.0.1	成人
+haose	好色TV	1.0.2	成人
+heiliao.source	黑料网	1.0.3	成人
+hhkan.source	好好看	1.0.3	
+hjkk	韩剧看看	1.0.1	
+hkdoll	玩偶姐姐	1.0.5	成人
+hl365.source	黑料不打烊	1.1.0	成人
+j18	18J.TV	1.0.0	成人
+javtiful.source	Javtiful	1.1.0	成人
+jpyy	金牌影视	1.0.1	
+madou	麻豆社	1.0.3	成人
+manko.source	Manko	1.1.0	成人
+mrds	每日大赛	1.0.2	成人
+netflixgc.source	奈飞工厂	1.0.1	
+porna91	91Porna	1.0.2	成人
+pornhub	Pornhub	1.0.2	成人
+pornlulu	撸撸视频 Pornlulu	1.0.2	成人
+porny	91Porny（九色）	1.0.1	成人
+rou	Rou Video	1.0.0	成人
+saohuo	烧火电影	1.0.1	
+tangxin	糖心Vlog	1.0.1	成人
+tiantian	天天影视	1.0.1	
+wwgz	农民影视	1.0.3	
+xhamster	xHamster	1.0.2	成人
+xingya	星芽短剧	1.0.4	
+xx9	主播视频	1.0.3	成人
