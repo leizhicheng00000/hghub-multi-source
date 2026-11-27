@@ -3,8 +3,9 @@
 在 [HGhub](https://github.com/) 0.0.5 的 HPP 插件架构上，把原本只有 1 个内容源的安装包，
 扩成**内置 64 个内容源**的 Android 构建，并修掉了原版「插件中心空白（state not managed）」的启动缺陷。
 
-> 产物：`HGhub_0.0.5_arm64_全源64_修复版.apk`（约 60 MB，arm64-v8a，debug 签名，可直接覆盖安装）
-> 见右侧 **Releases**。
+> **安装包**：[HGhub_0.0.5_arm64_64sources.apk](https://github.com/leizhicheng00000/hghub-multi-source/releases/download/v0.0.5-64sources/HGhub_0.0.5_arm64_64sources.apk)（60 MB，arm64-v8a，debug 签名，可直接覆盖安装）
+> **插件包**：[HGhub-plugins-64.zip](https://github.com/leizhicheng00000/hghub-multi-source/releases/download/v0.0.5-64sources/HGhub-plugins-64.zip)（454 KB，64 个单文件插件）
+> 全部产物见 **[Releases](https://github.com/leizhicheng00000/hghub-multi-source/releases/tag/v0.0.5-64sources)**。
 
 ---
 
