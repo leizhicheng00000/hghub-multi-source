@@ -9,8 +9,17 @@ import { useHost } from "../plugins/HostContext";
 import { isMobile } from "../environment";
 import { registerBackHandler } from "../back";
 import { movedBefore } from "../plugins/HomeArrangement";
+import { networkHint } from "../plugins/networkHints";
 const statuses: Record<InstalledPlugin["status"], string> = { ready: "已就绪", unloaded: "待加载", failed: "运行失败", incompatible: "不兼容", disabled: "已停用" };
 function ErrorMessage({ error }: { error: string }) { return error ? <div className="hpp-error" role="alert">{error}</div> : null; }
+/** 插件网络需求标签：🟢可直连 / 🟡需海外节点 / 🔴需特定国家节点 */
+function NetworkBadge({ id }: { id: string }) {
+  const hint = networkHint(id);
+  if (!hint) return null;
+  const tier = hint.tier === "direct" ? "net-direct" : hint.tier === "vpn" ? "net-vpn" : "net-region";
+  const text = hint.tier === "direct" ? "🟢 可直连" : hint.tier === "vpn" ? "🟡 需海外节点" : `🔴 需${hint.region}节点`;
+  return <span className={`hpp-net-badge ${tier}`} title={hint.note}>{text}</span>;
+}
 export default function Plugins({onBack,focusId}: {onBack:()=>void;focusId?:string}) {
   const host=useHost();
   const plugins=host.plugins.filter(p=>host.prefs.mature||!p.meta.mature);
@@ -111,7 +120,7 @@ function PluginManagement({ plugins, reload, focusId = "", onBack }: { plugins: 
       <button className="plugin-reorder-handle" aria-label={`长按拖动 ${p.meta.name} 排序`} title="长按拖动排序；键盘可用上下方向键" onPointerDown={e=>beginDrag(e,p.meta.id,kind)} onPointerMove={moveDrag} onPointerUp={endDrag} onPointerCancel={clearDrag} onLostPointerCapture={clearDrag} onKeyDown={e=>{if(e.key==="ArrowUp"||e.key==="ArrowDown"){e.preventDefault();keyMove(p.meta.id,kind,e.key==="ArrowUp"?-1:1);}}}>⠿</button>
 
     </article>)}</div></section>)}
-    </div><aside className="refined-plugin-detail">{selectedPlugin?<><div className="plugin-overview"><span className="refined-glyph">{selectedPlugin.meta.name.slice(0,1)}</span><div><h2>{selectedPlugin.meta.name} <small>v{selectedPlugin.meta.version}</small></h2><p>{selectedPlugin.meta.id} · {statuses[selectedPlugin.status]}</p><p>{selectedPlugin.meta.description}</p><small>{selectedPlugin.origin?.manifestName||selectedPlugin.source||"粘贴代码"}</small></div><button onClick={()=>setOptions(null)}>收起</button></div><ErrorMessage error={selectedPlugin.error?.message||""}/><PluginOptions key={selectedPlugin.meta.id+selectedPlugin.revision} plugin={selectedPlugin} reload={reload}><section className="plugin-maintenance"><h3>版本维护</h3>{selectedPlugin.enabled&&selectedPlugin.status!=="ready"&&<button disabled={busy} onClick={()=>void perform("retry",{id:selectedPlugin.meta.id})}>重试初始化</button>}{selectedPlugin.canRestore&&<button disabled={busy} onClick={()=>void perform("restore",{id:selectedPlugin.meta.id})}>恢复上一可用版本</button>}<button onClick={()=>setTab("import")}>插件更新与订阅</button><button className="danger" disabled={busy} onClick={()=>{if(window.confirm("移除「"+selectedPlugin.meta.name+"」及其本地存储与 Cookie？"))void perform("remove",{id:selectedPlugin.meta.id});}}>移除插件</button></section></PluginOptions></>:<div className="hpp-empty"><ICpu size={32}/><h2>插件详情</h2><p>从左侧选择插件，查看账号、线路、设置与日志。</p></div>}</aside></div>
+    </div><aside className="refined-plugin-detail">{selectedPlugin?<><div className="plugin-overview"><span className="refined-glyph">{selectedPlugin.meta.name.slice(0,1)}</span><div><h2>{selectedPlugin.meta.name} <small>v{selectedPlugin.meta.version}</small></h2><p>{selectedPlugin.meta.id} · {statuses[selectedPlugin.status]} · <NetworkBadge id={selectedPlugin.meta.id}/></p><p>{selectedPlugin.meta.description}</p><small>{networkHint(selectedPlugin.meta.id)?.note||""}</small><br/><small>{selectedPlugin.origin?.manifestName||selectedPlugin.source||"粘贴代码"}</small></div><button onClick={()=>setOptions(null)}>收起</button></div><ErrorMessage error={selectedPlugin.error?.message||""}/><PluginOptions key={selectedPlugin.meta.id+selectedPlugin.revision} plugin={selectedPlugin} reload={reload}><section className="plugin-maintenance"><h3>版本维护</h3>{selectedPlugin.enabled&&selectedPlugin.status!=="ready"&&<button disabled={busy} onClick={()=>void perform("retry",{id:selectedPlugin.meta.id})}>重试初始化</button>}{selectedPlugin.canRestore&&<button disabled={busy} onClick={()=>void perform("restore",{id:selectedPlugin.meta.id})}>恢复上一可用版本</button>}<button onClick={()=>setTab("import")}>插件更新与订阅</button><button className="danger" disabled={busy} onClick={()=>{if(window.confirm("移除「"+selectedPlugin.meta.name+"」及其本地存储与 Cookie？"))void perform("remove",{id:selectedPlugin.meta.id});}}>移除插件</button></section></PluginOptions></>:<div className="hpp-empty"><ICpu size={32}/><h2>插件详情</h2><p>从左侧选择插件，查看账号、线路、设置与日志。</p></div>}</aside></div>
     </div>
   </div></div></>;
 }
