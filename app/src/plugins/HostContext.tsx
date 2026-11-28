@@ -7,14 +7,22 @@ import { emptyUpdateState, pendingUpdates, tickPluginUpdates, type UpdateState }
 export interface LocalProgress { pluginId: string; mediaId: string; playlistId?: string; episodeId: string; positionSec: number; durationSec?: number; at: number }
 export interface LibraryEntry { pluginId: string; mediaId: string; item: MediaItem; favorite: boolean; tracking: boolean; updatedAt: number; lastProgress?: LocalProgress; latestLabel?: string }
 export interface Preferences { homeMode: "all" | "single" | "multiple"; homeIds: string[]; order: string[]; hiddenHomeIds: string[]; hiddenSections: string[]; sectionOrder: Record<string, string[]>; searchMode: "all" | "single" | "multiple"; searchIds: string[]; mature: boolean; playbackFallback: boolean; autoNext: boolean }
-const defaults: Preferences = { homeMode: "all", homeIds: [], order: [], hiddenHomeIds: [], hiddenSections: [], sectionOrder: {}, searchMode: "all", searchIds: [], mature: false, playbackFallback: true, autoNext: true };
+const defaults: Preferences = { homeMode: "all", homeIds: [], order: [], hiddenHomeIds: [], hiddenSections: [], sectionOrder: {}, searchMode: "all", searchIds: [], mature: true, playbackFallback: true, autoNext: true };
 function readPreferences(): Preferences {
   try {
     const raw = JSON.parse(localStorage.getItem("hpp.preferences") || "{}"), p = { ...defaults };
     for (const key of ["homeMode", "searchMode"] as const) if (["all", "single", "multiple"].includes(raw[key])) p[key] = raw[key];
     for (const key of ["homeIds", "searchIds", "order", "hiddenHomeIds", "hiddenSections"] as const) if (Array.isArray(raw[key])) p[key] = [...new Set<string>(raw[key].filter((v: unknown) => typeof v === "string"))];
     if (raw.sectionOrder && typeof raw.sectionOrder === "object" && !Array.isArray(raw.sectionOrder)) p.sectionOrder = Object.fromEntries(Object.entries(raw.sectionOrder).filter(([,v]) => Array.isArray(v)).map(([id,v]) => [id, [...new Set((v as unknown[]).filter((id): id is string => typeof id === "string"))]]));
-    p.mature = raw.mature === true; p.playbackFallback = raw.playbackFallback !== false; p.autoNext = raw.autoNext !== false; return p;
+    // 成人内容默认开启：老版本把 mature 默认写成 false，升级后用独立标记强制打开一次；
+    // 标记写在单独的 key 上，避免被 preferences 的 useEffect 写回覆盖。之后尊重用户手动设置。
+    if (localStorage.getItem("hpp.matureV2") !== "1") {
+      p.mature = true;
+      try { localStorage.setItem("hpp.matureV2", "1"); } catch { }
+    } else {
+      p.mature = raw.mature !== false;
+    }
+    p.playbackFallback = raw.playbackFallback !== false; p.autoNext = raw.autoNext !== false; return p;
   } catch { return defaults; }
 }
 const Ctx = createContext<{
