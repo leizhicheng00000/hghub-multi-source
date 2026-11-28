@@ -6,6 +6,7 @@
 > **安装包**：[HGhub_0.0.5_arm64_64sources.apk](https://github.com/leizhicheng00000/hghub-multi-source/releases/download/v0.0.5-64sources/HGhub_0.0.5_arm64_64sources.apk)（60 MB，arm64-v8a，debug 签名，可直接覆盖安装）
 > **插件包**：[HGhub-plugins-64.zip](https://github.com/leizhicheng00000/hghub-multi-source/releases/download/v0.0.5-64sources/HGhub-plugins-64.zip)（454 KB，64 个单文件插件）
 > 全部产物见 **[Releases](https://github.com/leizhicheng00000/hghub-multi-source/releases/tag/v0.0.5-64sources)**。
+> **鸿蒙 NEXT 安装包**：[HGhub_0.0.5_harmony_arm64_signed.hap](harmony/HGhub_0.0.5_harmony_arm64_signed.hap)（13 MB，已签名，纯血鸿蒙专用）。
 
 ---
 
@@ -19,6 +20,7 @@
 | `tools/` | 构建与校验脚本（插件抓取、meta 提取、语法检查、API 兼容性检查、探活、打包） |
 | `integration/` | 相对上游 0.0.5 改动的 4 个文件（见第四节） |
 | `docs/` | 交付说明、源清单 |
+| `harmony/` | 鸿蒙 NEXT 版 HAP 安装包、交叉编译脚本、签名材料与移植文档 |
 
 ---
 
@@ -218,8 +220,45 @@ pnpm tauri android build --debug --target aarch64 --apk --ci
 
 ---
 
-## 七、更新记录
+## 七、鸿蒙版（HarmonyOS NEXT）
 
+本仓库同时提供纯血鸿蒙（HarmonyOS NEXT 5.0.0 及以上）的 HAP 安装包，
+源码通过 Tauri 官方 `feat/open-harmony` 分支交叉编译，React 前端零改动，
+由 ArkWeb 承载。详见 [`harmony/README.md`](harmony/README.md)。
+
+**先确认你的手机要不要这个包：**
+
+| 手机系统 | 该装什么 |
+|---|---|
+| 非华为安卓机（小米 / OPPO / vivo / 三星等） | 安卓 APK，不要装 HAP |
+| 华为 HarmonyOS 4.x 及以下 | 也是安卓 APK（底层兼容 AOSP） |
+| 华为 HarmonyOS NEXT 5.x | 本仓库的 HAP |
+
+### 产物
+
+- `harmony/HGhub_0.0.5_harmony_arm64_signed.hap` — 已签名，13 MB
+- 包名 `com.hghub.player`，与安卓版一致
+- 最低 API 12（HarmonyOS NEXT 5.0.0），支持手机 / 平板 / 2in1
+- 发布证书签名，有效期至 2029-11-28，不绑定设备 UDID
+
+### 源码与脚本
+
+`harmony/` 下包含交叉编译与打包脚本（`build_hap.sh`、`build_ohos.sh`、`sign_hap.sh`）、
+工具链踩坑记录（`toolchain.md`）、Cargo/tauri 配置补丁，以及三个待补 ArkTS 插件的设计文档（`arks/`）。
+
+签名材料在 `harmony/signing/`，其中 `hghub-release.p12` 是发布密钥库（密码 `Hghub@2026`）。
+发布新版必须用同一把密钥签名，否则老用户无法覆盖升级。
+
+### 已知降级项
+
+鸿蒙版目前有三处功能降级（不影响启动与播放）：网页登录、插件目录选择、强制横屏。
+方案已写在 `harmony/arks/`，等待后续补 ArkTS 实现。
+
+---
+
+## 八、更新记录
+
+- **2026-11-28** 新增 HarmonyOS NEXT 版 HAP：Tauri OHOS 分支交叉编译 + 发布证书签名。
 - **2026-11-27** 内置源 1 → 64；修 `state not managed` 启动崩溃；黄果插件 v4.1.0 修封面解密。
 - **2026-11-26** 黄果插件 v4.0：重写加密通道，支持匿名播放。
 - **2026-11-25** 完成 Android arm64 交叉编译环境打通。
