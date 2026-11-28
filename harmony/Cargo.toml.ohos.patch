@@ -1,0 +1,81 @@
+# HGhub 0.0.5 · HarmonyOS NEXT 目标 Cargo.toml
+#
+# 用法：备份原文件后整份覆盖
+#   cp src-tauri/Cargo.toml src-tauri/Cargo.toml.android.bak
+#   cp 鸿蒙移植/Cargo.toml.ohos.patch src-tauri/Cargo.toml
+#
+# 与原文件的差异：
+#   1. tauri / tauri-build 改从官方 feat/open-harmony 分支取，版本对齐到 2.11.5
+#   2. 追加 [patch.crates-io]，把 wry / tao / cargo-mobile2 指向各自的 OHOS 分支
+#   3. 移除 Windows/macOS 专属依赖（交叉编译 OHOS 时 target cfg 本来也不会编译，
+#      但 tauri 分支里的版本与 crates.io 不同，留在文件里会造成 lock 解析噪音）
+#   4. rquickjs-sys 继续走本地 vendor（vendor 目录里已经有 OHOS bindgen 支持）
+
+[package]
+name = "huangguo-client"
+version = "0.0.5"
+description = "HGhub · 插件视频播放器（HarmonyOS NEXT 移植版）"
+authors = ["HGhub"]
+license = "PolyForm-Noncommercial-1.0.0"
+edition = "2021"
+rust-version = "1.90"
+
+[lib]
+name = "huangguo_client_lib"
+# OHOS 只需要 cdylib（产出给 ArkTS 加载的 .so）和 rlib（给 build.rs 用）。
+# 原来的 staticlib 在 OHOS 链接阶段会多产一份无用归档，去掉。
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
+
+[build-dependencies]
+tauri-build = { version = "2.6.3", path = "../../../hgport/gitdeps/tauri/crates/tauri-build" }
+
+[dependencies]
+tauri = { version = "2.11.5", path = "../../../hgport/gitdeps/tauri/crates/tauri" }
+tauri-plugin-opener = "=2.5.5"
+tauri-plugin-dialog = "=2.7.3"
+tauri-plugin-fs = "=2.5.2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+time = { version = "0.3", features = ["formatting"] }
+hghub-hpp = { path = "crates/hpp" }
+
+tokio = { version = "1", features = ["sync"] }
+
+[target.'cfg(any(target_os = "windows", target_os = "android"))'.dependencies]
+futures-util = "0.3"
+tokio-util = "0.7"
+
+[target.'cfg(target_os = "android")'.dependencies]
+uuid = { version = "1", features = ["v4"] }
+
+# OHOS 上补齐 Android 分支用到的两个 crate（android_login.rs / commands.rs 会引用）
+[target.'cfg(target_os = "ohos")'.dependencies]
+futures-util = "0.3"
+tokio-util = "0.7"
+uuid = { version = "1", features = ["v4"] }
+
+[patch.crates-io]
+# tauri 的 OHOS 分支依赖这两个 crate，原声明是 git，本机拉不动，改本地路径。
+openharmony-ability = { path = "../../../hgport/gitdeps/openharmony-ability/crates/ability" }
+openharmony-ability-derive = { path = "../../../hgport/gitdeps/openharmony-ability/crates/derive" }
+# wry / tao 的 OHOS 分支必须和 tauri 分支配套，否则编译期报
+# `wry does not implement OHOS platform` 之类的特征缺失。
+wry = { path = "../../../hgport/gitdeps/wry" }
+tao = { path = "../../../hgport/gitdeps/tao" }
+cargo-mobile2 = { path = "../../../hgport/gitdeps/cargo-mobile2" }
+# rquickjs-sys 走本地 vendor，原文件已有；保留在这里提醒不要删。
+rquickjs-sys = { path = "vendor/rquickjs-sys" }
+
+[profile.dev]
+incremental = false
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+opt-level = "s"
+strip = true
