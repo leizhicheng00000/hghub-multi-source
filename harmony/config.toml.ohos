@@ -1,0 +1,22 @@
+# src-tauri/.cargo/config.toml · HarmonyOS NEXT 交叉编译配置
+#
+# 用法：
+#   cp 鸿蒙移植/config.toml.ohos HGhub-0.0.5/src-tauri/.cargo/config.toml
+#
+# 原来的 config.toml 只有注释（说明中文用户名路径已通过 env.sh 重定向到 E:/rustup 等
+# ASCII 路径解决），这里保留同样的前提，并补上 OHOS target 的链接器。
+#
+# 重要：OHOS_NDK_HOME 必须由 env.sh 或 build_ohos.sh 设置，
+# 指向 DevEco Studio 自带的 openharmony/native 目录，例如：
+#   D:/Program Files/Huawei/DevEco Studio/sdk/HarmonyOS-NEXT-DB6/openharmony/native
+
+[target.aarch64-unknown-linux-ohos]
+linker = "clang"
+# OHOS NDK 的 libc++ 与 sysroot 由 ohrs / tauri-cli 的 OHOS 分支自动注入，
+# 这里只固定 linker；不要加 rustflags 覆盖，否则会把 Android 目标也带偏。
+rustflags = [
+  "-C", "link-arg=--target=aarch64-linux-ohos",
+]
+
+[build]
+target-dir = "target"
