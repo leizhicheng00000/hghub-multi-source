@@ -162,3 +162,9 @@
 .hpp-setting{flex-wrap:wrap}
 .hpp-cards{grid-template-columns:repeat(auto-fill,minmax(125px,1fr))}}
 
+
+/* 插件网络需求标注：直连 / 需海外节点 / 需特定国家节点 */
+.hpp-net-badge{display:inline-block;padding:1px 6px;border-radius:10px;font-size:10px;font-weight:600;vertical-align:middle;line-height:1.6}
+.hpp-net-badge.net-direct{background:rgba(46,160,67,.14);color:#3fb950}
+.hpp-net-badge.net-vpn{background:rgba(210,153,34,.14);color:#d2a13c}
+.hpp-net-badge.net-region{background:rgba(248,81,73,.14);color:#ff7b72}
